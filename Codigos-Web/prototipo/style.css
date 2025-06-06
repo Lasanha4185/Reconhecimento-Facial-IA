@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* preto bem escuro */
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+    color: #fff;
+    height: 100vh;
+}
+
+/* Grade futurista azul (linhas finas) */
+.scan-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(90deg, rgba(0, 204, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(rgba(0, 204, 255, 0.05) 1px, transparent 1px);
+    background-size: 60px 60px;
+    z-index: -1;
+    animation: moveGrid 10s linear infinite;
+}
+
+@keyframes moveGrid {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 60px 60px;
+    }
+}
+
+/* Luz difusa azul neon no centro */
+body::before {
+    content: '';
+    position: absolute;
+    width: 1000px;
+    height: 1000px;
+    background: #00ccff;
+    opacity: 0.02;
+    filter: blur(400px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -2;
+}
+
+/* Container login com fundo preto escuro transparente */
+.login-container {
+    background-color: rgba(7,7,7,0.8);
+    border: 1px solid rgba(0, 204, 255, 0.4);
+    border-radius: 15px;
+    padding: 40px;
+    width: 350px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 204, 255, 0.5);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Título azul neon */
+.login-container h2 {
+    margin: 0;
+    color: #00ccff;
+    font-size: 28px;
+}
+
+/* Subtítulo com azul clarinho */
+.subtitle {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 20px;
+}
+
+/* Grupos de input */
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #00ccff;
+}
+
+/* Inputs texto e senha */
+.input-group input[type="text"],
+.input-group input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(0, 204, 255, 0.4);
+    background-color: rgba(10, 10, 10, 0.8);
+    color: #fff;
+    border-radius: 8px;
+    outline: none;
+}
+
+.input-group input[type="text"]:focus,
+.input-group input[type="password"]:focus {
+    border-color: #00ccff;
+    box-shadow: 0 0 5px #00ccff;
+}
+
+/* Botão azul neon */
+.login-button {
+    background-color: #00ccff;
+    color: #000;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    width: 100%;
+}
+
+.login-button:hover {
+    background-color: #009ecf;
+}
+
+/* Rodapé */
+.footer {
+    margin-top: 20px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.4);
+}

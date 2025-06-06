@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Protótipo - IA Segurança Facial</title>
+    <link rel="stylesheet" href="style1.css" />
+</head>
+<body>
+    <div class="scan-grid"></div>
+    <div class="login-container">
+        <h2>Protótipo</h2>
+        <p class="subtitle">Bem-vindo ao sistema de IA com reconhecimento facial para segurança privada.</p>
+
+        <form id="uploadForm" enctype="multipart/form-data" onsubmit="return enviarImagem(event)">
+            <label for="faceImage" class="file-label">Enviar imagem facial</label>
+            <input type="file" id="faceImage" name="faceImage" accept="image/*" required />
+
+            <button type="submit" class="login-button">Enviar Imagem</button>
+        </form>
+
+        <div id="resultado" style="margin-top:20px; color:#00ccff;"></div>
+
+        <p style="font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 40px;">© 2025 - WDL</p>
+    </div>
+
+    <script>
+        function enviarImagem(event) {
+            event.preventDefault();
+
+            const input = document.getElementById('faceImage');
+            const resultado = document.getElementById('resultado');
+
+            if (input.files.length === 0) {
+                resultado.textContent = 'Por favor, selecione uma imagem.';
+                return false;
+            }
+
+            const file = input.files[0];
+            // Aqui você pode adicionar código para enviar o arquivo para um servidor (via fetch, axios, etc).
+            // Como não há backend, vamos só simular sucesso:
+
+            resultado.textContent = `Imagem "${file.name}" carregada com sucesso! (Simulação)`;
+
+            // Se quiser limpar o input:
+            input.value = '';
+
+            return false;
+        }
+    </script>
+</body>
+</html>

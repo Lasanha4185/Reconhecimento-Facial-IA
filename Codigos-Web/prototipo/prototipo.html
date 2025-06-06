@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - IA Segurança Facial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="scan-grid"></div>
+    <div class="login-container">
+        <h2>Login</h2>
+        <p class="subtitle">Sistema de Reconhecimento Facial IA</p>
+
+        <form onsubmit="return validarLogin()">
+            <div class="input-group">
+                <label for="username">Usuário</label>
+                <input type="text" id="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" required>
+            </div>
+            <button type="submit" class="login-button">Entrar</button>
+        </form>
+
+        <div class="footer">
+            © 2025 - WDL
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
